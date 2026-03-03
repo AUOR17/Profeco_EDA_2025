@@ -1,0 +1,21 @@
+name: 'dbt_profeco'
+version: '1.0.0'
+config-version: 2
+
+# Esto le dice a dbt qué conexión buscar en el profiles.yml
+profile: 'dbt_profeco'
+
+# Rutas de tus carpetas
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+# Configuración de cómo se guardan las tablas en Postgres
+models:
+  dbt_profeco:
+    staging:
+      +materialized: view  # Las de staging solo serán vistas
+    intermediate:
+      +materialized: view  # Las intermedias también
+    marts:
+      +materialized: table # Las finales sí se guardan como tablas físicas para que Power BI vuele
