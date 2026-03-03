@@ -1,0 +1,42 @@
+# =========================
+# Entornos Virtuales y Secretos
+# =========================
+env/
+venv/
+.venv/
+.env
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Datos (NUNCA subir datos al repo)
+# =========================
+data/
+*.csv
+*.parquet
+*.xlsx
+*.json
+
+# =========================
+# dbt (Data Build Tool)
+# =========================
+# Ignoramos el SQL compilado y los logs de ejecución
+dbt_profeco/target/
+dbt_profeco/logs/
+dbt_profeco/dbt_packages/
+dbt_profeco/dbt_modules/
+# Ignoramos profiles.yml por si decides poner tus credenciales de dbt aquí
+profiles.yml 
+
+# =========================
+# OS / Editores de Código (IDEs)
+# =========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
